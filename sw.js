@@ -2,9 +2,9 @@ const cacheName = "Restaraunt_Reviews_v1";
 
 const cacheAssets = [
     'index.html',
-    'restaraunt.html',
-    'css/style.css',
-    'data/restaraunts.json',
+    'restaurant.html',
+    'css/styles.css',
+    'data/restaurants.json',
     'img/1.jpg',
     'img/2.jpg',
     'img/3.jpg',
@@ -15,14 +15,14 @@ const cacheAssets = [
     'img/8.jpg',
     'img/9.jpg',
     'img/10.jpg',
-    'api.js',
-    'dbheader.js',
-    'main.js',
-    'restaraunt_info.js'
+    'js/api.js',
+    'js/dbhelper.js',
+    'js/main.js',
+    'js/restaurant_info.js'
 ];
 
 // Call install event
-self.addEventListener('install', (event)=> {
+self.addEventListener('install', event => {
     console.log("Service Worker installed");
     event.waitUntil(
         caches
@@ -36,6 +36,25 @@ self.addEventListener('install', (event)=> {
 });
 
 //Call activate event
-self.addEventListener('activate', (event) => {
+self.addEventListener('activate', event => {
     console.log('Service Worker activated');
+    event.waitUntil(
+        caches.keys()
+            .then(cacheNames => {
+                return Promise.all(
+                    cacheNames.map(cache => {
+                        if (cache!==cacheName) {
+                            console.log("Service Worker clearing old cache");
+                            return caches.delete(cache);
+                        }
+                    })
+                )
+            })
+    )
 })
+
+//Call fetch event
+self.addEventListener('fetch', event => {
+    console.log("Service Worker: fetching");
+    event.respondWith(fetch(event.request).catch(() => caches.match(event.request)));
+});
