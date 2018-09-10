@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -15,7 +15,9 @@
 <body>
   <header>
     <nav>
-      <h1><a href="/">Restaurant Reviews</a></h1>
+      <h1>
+        <a href="/">Restaurant Reviews</a>
+      </h1>
     </nav>
   </header>
 
@@ -26,13 +28,15 @@
     <section>
       <div class="filter-options">
         <h2>Filter Results</h2>
-        <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
+        <div class="filter-selects">
+        <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()" aria-label="select neighborhood">
           <option value="all">All Neighborhoods</option>
         </select>
-        <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
+        <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()" aria-label="select cuisine">
           <option value="all">All Cuisines</option>
         </select>
-      </div>
+        </div> <!-- .filter-selects -->
+      </div> <!-- .filter-options -->
       <ul id="restaurants-list"></ul>
     </section>
   </main>
