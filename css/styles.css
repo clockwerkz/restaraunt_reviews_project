@@ -288,9 +288,11 @@ section #map-container {
 .review-header h3 {
   color: #fff;
   font-size: 1.25rem;
+  padding: 15px 0 0 10px;
 }
 .review-header p {
   color: #dbdbdb;
+  padding: 20px 10px 0 0; 
 }
 #reviews-list {
   margin: 0;
