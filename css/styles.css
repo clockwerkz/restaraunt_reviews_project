@@ -144,6 +144,7 @@ section #map-container {
   background-color: #f3f3f3;
   list-style: outside none none;
   margin: 0;
+  height: 100%;
   padding: 30px 15px 60px;
   text-align: center;
   display: flex;
@@ -183,15 +184,16 @@ section #map-container {
   font-size: 11pt;
   padding: 0 10px;
 }
-#restaurants-list li a {
-  display: block;
+#restaurants-list li button {
+  border: none;
+  width: 100%;
   background-color: orange;
   border-bottom: 3px solid #eee;
   color: #fff;
   font-size: 10pt;
-  margin: auto 0 0 0;
   padding: 8px 30px 10px;
   text-align: center;
+  margin-top: auto;
   text-decoration: none;
   text-transform: uppercase;
 }
@@ -212,7 +214,7 @@ section #map-container {
 
 .inside #map-container {
   background: blue none repeat scroll 0 0;
-  height: 40vh;
+  height: 60vh;
   top: 80px;
   width: 100%;
 }
@@ -224,7 +226,7 @@ section #map-container {
 .inside #footer {
   bottom: 0;
   position: absolute;
-  width: 50%;
+  width: 100%;
 }
 #restaurant-name {
   color: #f18200;
@@ -260,7 +262,7 @@ section #map-container {
   border-bottom: 1px solid #d9d9d9;
   border-top: 1px solid #fff;
   padding: 140px 40px 30px;
-  width: 50%;
+  width: 100%;
 }
 #reviews-container {
   padding: 30px 40px 80px;
