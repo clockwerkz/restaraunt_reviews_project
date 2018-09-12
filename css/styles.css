@@ -49,16 +49,16 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   text-transform: uppercase;
 }
 /* ====================== Navigation ====================== */
-nav {
+.restaurant-title {
   width: 100%;
   height: 80px;
   background-color: #252831;
   text-align:center;
 }
-nav h1 {
+.restaurant-title h1 {
   margin: auto;
 }
-nav h1 a {
+ .restaurant-title h1 a {
   color: #fff;
   font-size: 14pt;
   font-weight: 200;
@@ -66,7 +66,7 @@ nav h1 a {
   text-transform: uppercase;
 }
 #breadcrumb {
-    padding: 10px 40px 16px;
+    padding: 6px 40px 10px;
     list-style: none;
     background-color: #eee;
     font-size: 17px;
@@ -75,25 +75,22 @@ nav h1 a {
 }
 
 /* Display list items side by side */
-#breadcrumb li {
-    display: inline;
-}
 
 /* Add a slash symbol (/) before/behind each list item */
-#breadcrumb li+li:before {
+#breadcrumb a+a:before {
     padding: 8px;
     color: black;
     content: "/\00a0";
 }
 
 /* Add a color to all links inside the list */
-#breadcrumb li a {
+#breadcrumb a {
     color: #0275d8;
     text-decoration: none;
 }
 
 /* Add a color on mouse-over */
-#breadcrumb li a:hover {
+#breadcrumb a:hover {
     color: #01447e;
     text-decoration: underline;
 }
@@ -262,7 +259,6 @@ section #map-container {
   border-bottom: 1px solid #d9d9d9;
   border-top: 1px solid #fff;
   padding: 140px 40px 30px;
-  width: 100%;
 }
 #reviews-container {
   padding: 30px 40px 80px;
@@ -314,6 +310,11 @@ section #map-container {
 }
 #restaurant-hours td {
   color: #666;
+}
+
+/* LEAFLET ADJUSTMENTS */
+.leaflet-bottom {
+  z-index: 900!important;
 }
 
 /* MEDIA QUERIES */
