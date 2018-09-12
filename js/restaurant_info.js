@@ -83,7 +83,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   name.innerHTML = restaurant.name;
 
   const address = document.getElementById('restaurant-address');
-  address.innerHTML = restaurant.address;
+  address.innerHTML = restaurant.address.replace(', ', ',<br/>');
 
   const image = document.getElementById('restaurant-img');
   image.className = 'restaurant-img'
@@ -113,7 +113,7 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
     row.appendChild(day);
 
     const time = document.createElement('td');
-    time.innerHTML = operatingHours[key];
+  time.innerHTML = operatingHours[key].replace(/, */g, ',<br/>');
     row.appendChild(time);
 
     hours.appendChild(row);

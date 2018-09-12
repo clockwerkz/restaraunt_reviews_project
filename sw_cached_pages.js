@@ -4,13 +4,13 @@ const cacheName = "Restaraunt_Reviews_v2";
 
 // Call install event
 self.addEventListener('install', event => {
-    console.log("Service Worker installed");
+    //console.log("Service Worker installed");
    
 });
 
 //Call activate event
 self.addEventListener('activate', event => {
-    console.log('Service Worker activated');
+    //console.log('Service Worker activated');
     event.waitUntil(
         caches.keys()
             .then(cacheNames => {
@@ -28,7 +28,7 @@ self.addEventListener('activate', event => {
 
 //Call fetch event
 self.addEventListener('fetch', event => {
-    console.log("Service Worker: fetching");
+    //console.log("Service Worker: fetching");
     event.respondWith(
         fetch(event.request)
             .then( res => {
