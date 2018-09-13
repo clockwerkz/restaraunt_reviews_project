@@ -10,7 +10,7 @@ class DBHelper {
   static get DATABASE_URL() {
     const port = 5500 // Change this to your server port
     const rootLocalHost = `http://localhost:${port}/data/restaurants.json`;
-    const rootGithub = 'https://clockwerkz.github.io/{your-project-name}/data/restaurants.json';
+    const rootGithub = 'https://clockwerkz.github.io/restaurant_reviews_project/data/restaurants.json';
     return rootLocalHost;
   }
 
