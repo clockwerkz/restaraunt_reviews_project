@@ -8,10 +8,10 @@ class DBHelper {
    * Change this to restaurants.json file location on your server.
    */
   static get DATABASE_URL() {
-    const port = 5500 // Change this to your server port
+    const port = 8000 // Change this to your server port
     const rootLocalHost = `http://localhost:${port}/data/restaurants.json`;
     const rootGithub = 'https://clockwerkz.github.io/restaurant_reviews_project/data/restaurants.json';
-    return rootLocalHost;
+    return rootGithub;
   }
 
   /**
